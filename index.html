@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="es-MX">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#070707" />
+    <meta name="description" content="Menú digital de El Bocado: hamburguesas, alitas, hot dogs, bebidas y papas." />
+    <title>El Bocado | Menú</title>
+    <link rel="stylesheet" href="assets/css/styles.css" />
+    <script src="assets/js/app.js" defer></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#menu">Ir al menú</a>
+
+    <aside class="ticker" aria-label="Avisos de El Bocado">
+      <div class="ticker-track">
+        <div class="ticker-group">
+          <span>Pedidos al 951-594-7183 y 951-365-5029</span>
+          <span>Entrega a domicilio</span>
+          <span>Abierto hasta las 10 PM</span>
+          <span>2×1 en alitas los sábados</span>
+        </div>
+        <div class="ticker-group" aria-hidden="true">
+          <span>Pedidos al 951-594-7183 y 951-365-5029</span>
+          <span>Entrega a domicilio</span>
+          <span>Abierto hasta las 10 PM</span>
+          <span>2×1 en alitas los sábados</span>
+        </div>
+      </div>
+    </aside>
+
+    <header class="site-header" id="inicio">
+      <div class="header-inner">
+        <a class="brand" href="#inicio" aria-label="El Bocado, inicio">
+          <span class="brand-mark" aria-hidden="true">EB</span>
+          <span class="brand-copy">
+            <strong>El Bocado</strong>
+            <small>Muerde el momento</small>
+          </span>
+        </a>
+        <a class="menu-link" href="#menu">Ver menú <span aria-hidden="true">↓</span></a>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero" aria-labelledby="hero-title">
+        <div class="hero-media" aria-hidden="true"></div>
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+          <p class="eyebrow"><span></span> Comida rápida · gran sabor</p>
+          <h1 id="hero-title">Ese antojo<br /><em>tiene nombre.</em></h1>
+          <p class="hero-text">Hamburguesas, alitas y snacks preparados para morder el momento.</p>
+          <a class="primary-button" href="#menu">Explorar el menú</a>
+        </div>
+        <div class="hero-stamp" aria-hidden="true">
+          <span>Hecho al</span>
+          <strong>momento</strong>
+        </div>
+      </section>
+
+      <section class="menu-section" id="menu" aria-labelledby="menu-title">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow"><span></span> Para todos los antojos</p>
+            <h2 id="menu-title">Nuestro menú</h2>
+          </div>
+          <p>Precios en pesos mexicanos</p>
+        </div>
+
+        <nav class="category-nav" aria-label="Categorías del menú" id="category-nav"></nav>
+        <div id="menu-content" class="menu-content" aria-live="polite" aria-busy="true">
+          <div class="loading-card"><span></span><span></span><span></span></div>
+          <p class="loading-text">Preparando el menú…</p>
+        </div>
+      </section>
+
+      <section class="contact-section" aria-labelledby="contact-title">
+        <div class="contact-copy">
+          <p class="eyebrow eyebrow-dark"><span></span> Encuéntranos</p>
+          <h2 id="contact-title">¿Ya elegiste<br />tu próximo bocado?</h2>
+        </div>
+        <div class="contact-details">
+          <div>
+            <span class="contact-label">Servicio a domicilio</span>
+            <p>951-594-7183<br />951-365-5029</p>
+          </div>
+          <div>
+            <span class="contact-label">Dirección</span>
+            <address>Av. del Bosque #75<br />Col. El Manantial</address>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <a class="footer-brand" href="#inicio">El Bocado</a>
+      <p>Muerde el momento.</p>
+      <p class="copyright">© <span id="current-year"></span> El Bocado</p>
+    </footer>
+
+    <noscript>
+      <div class="noscript">Activa JavaScript para consultar el menú y sus precios.</div>
+    </noscript>
+  </body>
+</html>

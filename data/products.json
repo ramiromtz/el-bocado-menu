@@ -1,0 +1,108 @@
+[
+  {
+    "id": "hamburguesa-sencilla",
+    "name": "Hamburguesa sencilla",
+    "category": "Hamburguesas",
+    "price": 60,
+    "image": "assets/images/burger.jpg",
+    "alt": "Hamburguesa con carne, queso y vegetales",
+    "topics": ["Lechuga", "Tomate", "Cebolla", "Carne", "Queso amarillo"],
+    "available": true
+  },
+  {
+    "id": "hamburguesa-hawaiana",
+    "name": "Hamburguesa hawaiana",
+    "category": "Hamburguesas",
+    "price": 70,
+    "image": "assets/images/burger.jpg",
+    "alt": "Hamburguesa de presentación provisional",
+    "topics": ["Carne", "Jamón", "Piña", "Queso amarillo", "Quesillo", "Salchicha", "Lechuga", "Tomate", "Cebolla", "Cebolla caramelizada"],
+    "available": true
+  },
+  {
+    "id": "hamburguesa-especial",
+    "name": "Hamburguesa especial",
+    "category": "Hamburguesas",
+    "price": 90,
+    "image": "assets/images/burger.jpg",
+    "alt": "Hamburguesa especial de presentación provisional",
+    "topics": ["Carne", "Jamón", "Piña", "Queso amarillo", "Queso manchego", "Quesillo", "Salchicha", "Tocino", "Verdura", "Cebolla caramelizada"],
+    "available": true,
+    "badge": "Favorita"
+  },
+  {
+    "id": "alitas-pollo",
+    "name": "Alitas de pollo (6 pzas.)",
+    "category": "Snacks",
+    "price": 90,
+    "image": "assets/images/wings.jpg",
+    "alt": "Seis alitas de pollo glaseadas",
+    "topics": ["6 piezas", "Salsa a elegir", "Lechuga", "Pepino", "Zanahoria"],
+    "variantLabel": "Salsas disponibles",
+    "variants": ["BBQ", "Mango habanero", "Piña habanero"],
+    "available": true
+  },
+  {
+    "id": "hot-dogs",
+    "name": "Hot dogs",
+    "category": "Snacks",
+    "price": 30,
+    "image": "assets/images/hot-dog.jpg",
+    "alt": "Hot dog con vegetales y cebolla caramelizada",
+    "topics": ["Salchicha", "Tomate", "Cebolla", "Chiles", "Cebolla caramelizada"],
+    "available": true
+  },
+  {
+    "id": "malteadas-frappes",
+    "name": "Malteadas o frappés",
+    "category": "Bebidas",
+    "price": 50,
+    "image": "assets/images/frappe.jpg",
+    "alt": "Frappé de chocolate con crema batida",
+    "topics": ["Malteada", "Frappé", "Sabores disponibles"],
+    "available": true
+  },
+  {
+    "id": "micheladas",
+    "name": "Micheladas",
+    "category": "Bebidas",
+    "price": null,
+    "image": "assets/images/michelada.jpg",
+    "alt": "Michelada con escarchado de chile y limón",
+    "topics": ["Limón", "Chile", "Escarchado"],
+    "variantLabel": "Sabores disponibles",
+    "variants": ["Clásica", "Mango", "Tamarindo"],
+    "available": false,
+    "badge": "Próximamente"
+  },
+  {
+    "id": "papas-francesa",
+    "name": "Papas a la francesa",
+    "category": "Papas",
+    "price": 60,
+    "image": "assets/images/fries.jpg",
+    "alt": "Canasta con papas a la francesa doradas",
+    "topics": ["Papa", "Sal", "Aderezo disponible"],
+    "available": true
+  },
+  {
+    "id": "papas-gajo",
+    "name": "Papas gajo",
+    "category": "Papas",
+    "price": 60,
+    "image": "assets/images/fries.jpg",
+    "alt": "Papas doradas de presentación provisional",
+    "topics": ["Papa gajo", "Sazonador", "Aderezo disponible"],
+    "available": true
+  },
+  {
+    "id": "salchipapas",
+    "name": "Salchipapas",
+    "category": "Papas",
+    "price": 70,
+    "image": "assets/images/salchipapas.jpg",
+    "alt": "Papas fritas con salchicha y salsas",
+    "topics": ["Papas", "Salchicha", "Cátsup", "Mayonesa"],
+    "available": true
+  }
+]

@@ -1,7 +1,17 @@
 const categoryOrder = ["Hamburguesas", "Snacks", "Bebidas", "Papas"];
 const menuContent = document.querySelector("#menu-content");
 const categoryNav = document.querySelector("#category-nav");
+const categoryNavShell = document.querySelector("#category-nav-shell");
 let imageObserver;
+
+const categoryPromotions = {
+  Hamburguesas: {
+    kicker: "Hazla combo",
+    title: "Agrega papas a la francesa",
+    description: "Disponible para cualquier hamburguesa del menú.",
+    price: 25
+  }
+};
 
 const slugify = (value) =>
   value.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/(^-|-$)/g, "");
@@ -21,7 +31,7 @@ function createProductCard(product) {
   image.alt = product.alt;
   image.className = "lazy-image";
   image.width = 1200;
-  image.height = 868;
+  image.height = 900;
   image.decoding = "async";
   image.addEventListener("load", () => image.classList.add("is-loaded"));
   image.addEventListener("error", () => media.classList.add("is-error"));
@@ -140,6 +150,36 @@ function observeProductImages() {
   images.forEach((image) => imageObserver.observe(image));
 }
 
+function updateCategoryScrollHint() {
+  const hasOverflow = categoryNav.scrollWidth > categoryNav.clientWidth + 2;
+  const isAtEnd = categoryNav.scrollLeft + categoryNav.clientWidth >= categoryNav.scrollWidth - 4;
+  categoryNavShell.classList.toggle("has-overflow", hasOverflow);
+  categoryNavShell.classList.toggle("at-end", isAtEnd);
+}
+
+function createCategoryPromotion(promotion) {
+  const aside = document.createElement("aside");
+  aside.className = "category-promo";
+  aside.setAttribute("aria-label", `${promotion.title} por ${formatPrice(promotion.price)}`);
+
+  const copy = document.createElement("div");
+  copy.className = "category-promo-copy";
+  const kicker = document.createElement("span");
+  kicker.className = "category-promo-kicker";
+  kicker.textContent = promotion.kicker;
+  const title = document.createElement("strong");
+  title.textContent = promotion.title;
+  const description = document.createElement("p");
+  description.textContent = promotion.description;
+  copy.append(kicker, title, description);
+
+  const price = document.createElement("span");
+  price.className = "category-promo-price";
+  price.innerHTML = `+${formatPrice(promotion.price)}<small>MXN</small>`;
+  aside.append(copy, price);
+  return aside;
+}
+
 function renderMenu(products) {
   const categories = categoryOrder.filter((category) => products.some((product) => product.category === category));
   categoryNav.replaceChildren(...categories.map((category) => {
@@ -149,6 +189,7 @@ function renderMenu(products) {
     link.textContent = category;
     return link;
   }));
+  requestAnimationFrame(updateCategoryScrollHint);
 
   const sections = categories.map((category) => {
     const section = document.createElement("section");
@@ -160,7 +201,9 @@ function renderMenu(products) {
     const grid = document.createElement("div");
     grid.className = "product-grid";
     products.filter((product) => product.category === category).forEach((product) => grid.append(createProductCard(product)));
-    section.append(heading, grid);
+    section.append(heading);
+    if (categoryPromotions[category]) section.append(createCategoryPromotion(categoryPromotions[category]));
+    section.append(grid);
     return section;
   });
 
@@ -188,4 +231,6 @@ async function loadMenu() {
 }
 
 document.querySelector("#current-year").textContent = new Date().getFullYear();
+categoryNav.addEventListener("scroll", updateCategoryScrollHint, { passive: true });
+window.addEventListener("resize", updateCategoryScrollHint);
 loadMenu();

@@ -20,11 +20,12 @@ Edita `data/products.json`. Cada producto usa estos campos:
 - `name`: nombre que verá el cliente.
 - `category`: `Hamburguesas`, `Snacks`, `Bebidas` o `Papas`.
 - `price`: número sin signo de pesos; usa `null` si todavía no hay precio.
+- `pricePrefix`: texto opcional antes del precio, por ejemplo `Desde` cuando las variantes cuestan diferente.
 - `image`: ruta relativa de la fotografía.
 - `alt`: descripción breve de la imagen para accesibilidad.
 - `topics`: lista de ingredientes o características que aparecerán debajo del producto.
 - `variantLabel`: título opcional del grupo, por ejemplo `Salsas disponibles`.
-- `variants`: sabores o presentaciones que aparecerán dentro del botón `Ver sabores`.
+- `variants`: sabores o presentaciones. Puede contener textos simples o elementos con `name`, `description` y `price`. Usa `priceLabel` para mostrar textos temporales como `Precio especial` sin publicar una cifra incorrecta.
 - `available`: `true` para disponible o `false` para próximamente.
 - `badge`: etiqueta opcional como `Favorita` o `Próximamente`.
 

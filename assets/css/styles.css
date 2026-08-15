@@ -161,8 +161,17 @@ a { color: inherit; }
 .variants-label { margin: 0 0 .6rem; color: var(--muted); font-size: .64rem; font-weight: 800; letter-spacing: .07em; text-transform: uppercase; }
 .variants-list { display: flex; flex-wrap: wrap; gap: .4rem; margin: 0; padding: 0; list-style: none; }
 .variants-list li { padding: .36rem .5rem; background: var(--yellow); color: var(--ink); font-size: .66rem; font-weight: 900; }
+.variants-list .variant-priced {
+  display: flex; flex: 1 1 100%; align-items: center; justify-content: space-between; gap: .8rem;
+  min-height: 48px; padding: .58rem .65rem; background: #27251c; color: var(--white); border: 1px solid #454230;
+}
+.variant-copy { display: grid; gap: .18rem; min-width: 0; }
+.variant-copy strong { color: var(--white); font-size: .72rem; text-transform: uppercase; letter-spacing: .02em; }
+.variant-copy small { color: var(--muted); font-size: .61rem; font-weight: 600; line-height: 1.3; }
+.variant-price { flex: 0 0 auto; color: var(--yellow); font-size: .75rem; font-weight: 900; text-align: right; }
 .product-price { color: var(--yellow); font: 900 1.45rem/1 var(--display); white-space: nowrap; }
 .product-price small { display: block; margin-top: .35rem; color: var(--muted); font: 700 .56rem/1 var(--body); text-align: right; letter-spacing: .1em; }
+.product-price .product-price-prefix { margin: 0 0 .28rem; color: var(--yellow); text-transform: uppercase; }
 .loading-card { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; }
 .loading-card span { height: 350px; background: linear-gradient(100deg, #111 25%, #1b1b18 45%, #111 65%); background-size: 200% 100%; animation: loading 1.4s infinite; }
 .loading-text { color: var(--muted); }
@@ -225,7 +234,8 @@ footer p { margin: 0; color: var(--muted); font-size: .8rem; }
   .product-image { aspect-ratio: 16/9; min-height: 0; }
   .product-info { align-content: center; grid-template-columns: 1fr auto; gap: .8rem; padding: 1rem; }
   .product-price { font-size: 1.3rem; }
-  .product-price small { display: inline; margin-left: .25rem; }
+  .product-price small:not(.product-price-prefix) { display: inline; margin-left: .25rem; }
+  .product-price .product-price-prefix { display: block; margin-left: 0; text-align: right; }
   .contact-details { grid-template-columns: 1fr; }
   footer { padding: 2rem 0; min-height: 0; flex-wrap: wrap; }
   .copyright { width: 100%; margin-left: 0; }

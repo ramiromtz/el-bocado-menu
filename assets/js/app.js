@@ -92,7 +92,31 @@ function createProductCard(product) {
     list.className = "variants-list";
     product.variants.forEach((variant) => {
       const item = document.createElement("li");
-      item.textContent = variant;
+      if (typeof variant === "string") {
+        item.textContent = variant;
+      } else {
+        item.className = "variant-priced";
+
+        const copy = document.createElement("span");
+        copy.className = "variant-copy";
+        const name = document.createElement("strong");
+        name.textContent = variant.name;
+        copy.append(name);
+
+        if (variant.description) {
+          const description = document.createElement("small");
+          description.textContent = variant.description;
+          copy.append(description);
+        }
+
+        const variantPrice = document.createElement("span");
+        variantPrice.className = "variant-price";
+        variantPrice.textContent = Number.isFinite(variant.price)
+          ? formatPrice(variant.price)
+          : variant.priceLabel || "Consultar";
+
+        item.append(copy, variantPrice);
+      }
       list.append(item);
     });
     panel.append(label, list);
@@ -117,7 +141,20 @@ function createProductCard(product) {
 
   const price = document.createElement("span");
   price.className = "product-price";
-  price.innerHTML = product.price === null ? "—" : `${formatPrice(product.price)}<small>MXN</small>`;
+  if (product.price === null) {
+    price.textContent = "—";
+  } else {
+    if (product.pricePrefix) {
+      const prefix = document.createElement("small");
+      prefix.className = "product-price-prefix";
+      prefix.textContent = product.pricePrefix;
+      price.append(prefix);
+    }
+    price.append(document.createTextNode(formatPrice(product.price)));
+    const currency = document.createElement("small");
+    currency.textContent = "MXN";
+    price.append(currency);
+  }
   info.append(price);
 
   article.append(media, info);

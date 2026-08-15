@@ -24,8 +24,8 @@
     "name": "Hamburguesa especial",
     "category": "Hamburguesas",
     "price": 90,
-    "image": "assets/images/burger-especial.jpg",
-    "alt": "Hamburguesa especial con piña, tocino, salchicha y varios quesos",
+    "image": "assets/images/burger-especial-real-v2.jpg",
+    "alt": "Hamburguesa especial real de El Bocado con jamón, salchicha y vegetales",
     "topics": ["Carne", "Jamón", "Piña", "Queso amarillo", "Queso manchego", "Quesillo", "Salchicha", "Tocino", "Verdura", "Cebolla caramelizada"],
     "available": true,
     "badge": "Favorita"
@@ -46,7 +46,7 @@
     "id": "hot-dogs",
     "name": "Hot dogs",
     "category": "Snacks",
-    "price": 30,
+    "price": 35,
     "image": "assets/images/hot-dog.jpg",
     "alt": "Hot dog con vegetales y cebolla caramelizada",
     "topics": ["Salchicha", "Tomate", "Cebolla", "Chiles", "Cebolla caramelizada"],
@@ -57,9 +57,24 @@
     "name": "Malteadas o frappés",
     "category": "Bebidas",
     "price": 50,
-    "image": "assets/images/frappe-mexicano.jpg",
-    "alt": "Frappé de chocolate en vaso con domo, crema batida y jarabe",
-    "topics": ["Malteada", "Frappé", "Sabores disponibles"],
+    "pricePrefix": "Desde",
+    "image": "assets/images/frappe-real-v2.jpg",
+    "alt": "Frappé de chocolate real de El Bocado con crema batida, chispas y barquillo",
+    "topics": ["Malteada", "Frappé"],
+    "variantLabel": "Presentaciones y precios",
+    "variants": [
+      {
+        "name": "Sabores clásicos",
+        "description": "Consulta los sabores disponibles",
+        "price": 50
+      },
+      {
+        "name": "Frappé sabor Gansito®",
+        "description": "Preparado con producto Marinela",
+        "price": 80,
+        "priceLabel": "Precio especial"
+      }
+    ],
     "available": true
   },
   {
@@ -67,8 +82,8 @@
     "name": "Micheladas",
     "category": "Bebidas",
     "price": null,
-    "image": "assets/images/michelada-mexicana.jpg",
-    "alt": "Michelada mexicana en tarro con escarchado de chile y limón",
+    "image": "assets/images/michelada-real-v2.jpg",
+    "alt": "Michelada roja en tarro con escarchado de chile, hielo y rodaja de limón",
     "topics": ["Limón", "Chile", "Escarchado"],
     "variantLabel": "Sabores disponibles",
     "variants": ["Clásica", "Mango", "Tamarindo"],
